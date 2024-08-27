@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { useAlert } from '../context/notes/AlertContext';
 
 const Signup = () => {
@@ -63,7 +63,7 @@ const Signup = () => {
         </Form.Group>
 
         <Form.Text style={{ color: "#E4E4E7",marginTop:"30px",display:"block" }}>
-          We'll never share your email with anyone else.
+        Already have an account <Link to='/signin'>Sign In</Link>
         </Form.Text>
 
         <Button style={{ backgroundColor: "#27272A",marginTop:"20px", color: "#E4E4E7", border: "gray solid 1px" }} variant="primary" type="submit">

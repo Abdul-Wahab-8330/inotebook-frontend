@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAlert } from '../context/notes/AlertContext';
 
 const NavBar = () => {
   const showAlert = useAlert();
   const navigate = useNavigate();
-  const [user, setUser] = useState(null); // State to hold user info
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('user'); // Clear user info on logout
-    setUser(null); // Clear user info on logout
     showAlert("Logged Out Successfully", "success");
     navigate('/signin');
   };
 
-  // Retrieve user info from localStorage or a user context
-  useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    console.log("Retrieved user from localStorage:", storedUser); // Debugging line
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []);
 
   return (
     <Navbar style={{ borderBottom: "solid 1px gray" }} expand="lg" bg="dark" variant="dark">

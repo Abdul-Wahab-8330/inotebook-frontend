@@ -17,7 +17,7 @@ const Notes = () => {
         } else {
             navigate("/signin");
         }
-        // eslint-disable-next-line
+        
     }, [navigate, getNotes]);
 
     const ref = useRef(null);

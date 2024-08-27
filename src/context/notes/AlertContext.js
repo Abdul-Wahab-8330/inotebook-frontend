@@ -55,6 +55,10 @@ export const AlertProvider = ({ children }) => {
           progress: undefined,
           theme: "dark",
         });
+        break;
+        default:
+          console.log("error")
+          break;
     }
   }
 
